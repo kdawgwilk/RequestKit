@@ -1,5 +1,7 @@
 # RequestKit
 
+NOTE: This fork adds support for Swift Package Manager in order to use for scripting and CLI tools
+
 [![Build Status](https://travis-ci.org/nerdishbynature/RequestKit.svg?branch=master)](https://travis-ci.org/nerdishbynature/RequestKit)
 [![codecov.io](https://codecov.io/github/nerdishbynature/RequestKit/coverage.svg?branch=master)](https://codecov.io/github/nerdishbynature/RequestKit?branch=master)
 

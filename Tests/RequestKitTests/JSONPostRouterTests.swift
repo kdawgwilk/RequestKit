@@ -1,10 +1,17 @@
-import RequestKit
 import XCTest
+@testable import RequestKit
 
 class JSONPostRouterTests: XCTestCase {
-    func testJSONPostJSONError() {
+    static var allTests : [(String, (JSONPostRouterTests) -> () throws -> Void)] {
+        return [
+            ("testJSONPostJSONError", testJSONPostJSONError),
+            ("testJSONPostStringError", testJSONPostStringError),
+        ]
+    }
+
+    func testJSONPostJSONError() throws {
         let jsonDict = ["message": "Bad credentials", "documentation_url": "https://developer.github.com/v3"]
-        let jsonString = String(data: try! JSONSerialization.data(withJSONObject: jsonDict, options: JSONSerialization.WritingOptions()), encoding: String.Encoding.utf8)
+        let jsonString = String(data: try JSONSerialization.data(withJSONObject: jsonDict, options: JSONSerialization.WritingOptions()), encoding: String.Encoding.utf8)
         let session = RequestKitURLTestSession(expectedURL: "https://example.com/some_route", expectedHTTPMethod: "POST", response: jsonString, statusCode: 401)
         let task = TestInterface().postJSON(session) { response in
             switch response {

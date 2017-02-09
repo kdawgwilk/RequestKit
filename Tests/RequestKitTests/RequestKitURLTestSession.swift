@@ -1,5 +1,5 @@
-import RequestKit
 import XCTest
+@testable import RequestKit
 
 class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     private (set) var resumeWasCalled = false

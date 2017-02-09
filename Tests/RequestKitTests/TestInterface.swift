@@ -1,4 +1,5 @@
-import RequestKit
+import Foundation
+@testable import RequestKit
 
 class TestInterfaceConfiguration: Configuration {
     var apiEndpoint: String

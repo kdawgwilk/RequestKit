@@ -1,7 +1,16 @@
 import XCTest
-import RequestKit
+@testable import RequestKit
 
 class RouterTests: XCTestCase {
+    static var allTests : [(String, (RouterTests) -> () throws -> Void)] {
+        return [
+            ("testRequest", testRequest),
+            ("testWasSuccessful", testWasSuccessful),
+            ("testURLComponents", testURLComponents),
+            ("testFormEncodedRouteRequest", testFormEncodedRouteRequest),
+        ]
+    }
+
     lazy var router: TestRouter = {
         let config = TestConfiguration("1234", url: "https://example.com/api/v1/")
         let router = TestRouter.testRoute(config)
